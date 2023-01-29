@@ -1,15 +1,11 @@
 import { Routes } from '@angular/router'
+import { CardBrandComponent } from '@app/pages/card-brand/card-brand.component';
 
 
 export const RouterPrivate: Routes = [
-    {
-      path: '', 
-      children: [
-        {
-          path: 'card-brand',
-          loadChildren: () => import('@pages/card-brand/card-brand.module').then(m => m.CardBrandModule)
-        }
-      ]
-    }
-  ];
+  {
+    path: 'card-brand',
+    component: CardBrandComponent,
+  }
+];
   

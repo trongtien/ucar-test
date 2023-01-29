@@ -1,37 +1,35 @@
-<nz-sider
-  class="menu-sidebar"
-  nzCollapsible
-  nzWidth="256px"
-  nzBreakpoint="md"
-  [(nzCollapsed)]="isCollapsed"
-  [nzTrigger]="null"
+<div class="sidebar-logo">
+  <a href="/" target="_parent">
+    <img src="/assets/images/logo.svg" alt="logo" />
+  </a>
+
+  <span class="header-trigger icon-colapse-side-bar" (click)="isCollapsed = !isCollapsed">
+    <span
+      class="trigger"
+      nz-icon
+      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+    ></span>
+  </span>
+</div>
+
+<ul
+  nz-menu
+  nzMode="inline"
+  [nzInlineCollapsed]="isCollapsed"
+  class="sidebar-list-menu_bg sidebar-list-menu"
 >
-  <div class="sidebar-logo">
-    <a href="https://ng.ant.design/" target="_blank">
-      <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
-      <h1>Ant Design Of Angular</h1>
-    </a>
-  </div>
-  <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a>Basic Form</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nz-sider>
+  <li
+    nz-menu-item
+    nz-tooltip
+    class="sidebar-list-menu_bg"
+  >
+    <span nz-icon nzType="mail"></span>
+    <span>Navigation One</span>
+  </li>
+  <li nz-submenu class="sidebar-list-menu_bg" nzMenuClassName="sidebar-list-menu_bg" nzTitle="Navigation Two" nzIcon="appstore">
+    <ul class="sidebar-list-menu_bg">
+      <li nz-menu-item>Option 5</li>
+      <li nz-menu-item>Option 6</li>
+    </ul>
+  </li>
+</ul>
