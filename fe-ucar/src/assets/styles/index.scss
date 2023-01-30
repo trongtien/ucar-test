@@ -1,0 +1,20 @@
+@import "src/assets/styles/variables.scss";
+@import "src/assets/styles/mixins.scss";
+
+.ant-menu {
+    background: $primary-bg !important;
+
+    .ant-menu-submenu-arrow, .ant-menu-submenu-expand-icon {
+        color: $light-text !important;
+    }
+
+    
+    
+    [nz-submenu-inline-child] {
+        padding-left:  pxToRem(16) !important;
+
+        [nz-menu-item] {
+            padding-left:  pxToRem(32) !important;
+        }
+    }
+}

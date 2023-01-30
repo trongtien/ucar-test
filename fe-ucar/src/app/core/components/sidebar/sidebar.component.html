@@ -3,7 +3,10 @@
     <img src="/assets/images/logo.svg" alt="logo" />
   </a>
 
-  <span class="header-trigger icon-colapse-side-bar" (click)="isCollapsed = !isCollapsed">
+  <span
+    class="header-trigger icon-colapse-side-bar"
+    (click)="isCollapsed = !isCollapsed"
+  >
     <span
       class="trigger"
       nz-icon
@@ -21,15 +24,22 @@
   <li
     nz-menu-item
     nz-tooltip
-    class="sidebar-list-menu_bg"
+    class="sidebar-list-menu_bg sidebar-list-menu_item"
   >
-    <span nz-icon nzType="mail"></span>
-    <span>Navigation One</span>
+    <span class="sidebar-list-menu_item-icon" nz-icon nzType="mail"></span>
+    <span class="sidebar-list-menu_item-text">Car Brand</span>
   </li>
-  <li nz-submenu class="sidebar-list-menu_bg" nzMenuClassName="sidebar-list-menu_bg" nzTitle="Navigation Two" nzIcon="appstore">
-    <ul class="sidebar-list-menu_bg">
-      <li nz-menu-item>Option 5</li>
-      <li nz-menu-item>Option 6</li>
+  <li
+    nz-submenu
+    class="sidebar-list-menu_bg sidebar-list-menu_item"
+    nzMenuClassName="sidebar-list-menu_bg"
+    nzTitle="Navigation Two"
+    nzIcon="appstore"
+  >
+    <ul class="sidebar-list-menu_bg sidebar-list-menu_item-chidren">
+      <li nz-menu-item class="sidebar-list-menu_item-chidren-item">
+        <span class="sidebar-list-menu_item-text">Option 6</span>
+      </li>
     </ul>
   </li>
 </ul>

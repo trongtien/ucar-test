@@ -35,9 +35,14 @@
               }
             ],
             "styles": [
-              "src/theme.less",
-              "src/styles.scss"
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "src/assets/styles/index.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -99,7 +104,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles/index.scss"
             ],
             "scripts": []
           }
