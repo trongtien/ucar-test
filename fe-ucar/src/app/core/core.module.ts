@@ -7,6 +7,7 @@ import { NgZorroIconModule } from './ng-zorro-icon/ng-zorro-icon.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ToggleLayoutComponent } from './components/toggle-layout/toggle-layout.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     LayoutComponent,
     HeaderComponent,
     SidebarComponent,
+    ToggleLayoutComponent
   ],
   imports: [
     NgZorroModule,

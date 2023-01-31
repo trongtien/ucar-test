@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { ResizeService } from '@app/core/services';
 
 @Component({
   selector: 'app-component-sidebar',
@@ -7,4 +8,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class SidebarComponent {
   isCollapsed = false
+
+  
 }

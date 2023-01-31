@@ -8,10 +8,5 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
-
-  // getAnimationData(outlet: RouterOutlet) {
-  //   return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  // }
-
   isCollapsed = false;
 }
