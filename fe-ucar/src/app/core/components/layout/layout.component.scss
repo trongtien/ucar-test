@@ -1,3 +1,5 @@
+@import "src/assets/styles";
+
 :host {
     display: flex;
     text-rendering: optimizeLegibility;
@@ -5,20 +7,32 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  nz-content {
-    margin: 24px;
-  }
+  // nz-content {
+  //   margin: 24px;
+  // }
   
-  .inner-content {
-    padding: 24px;
-    background: #fff;
-    height: 100%;
-  }
+ 
 
 .app-layout {
   height: 100vh;
 
   .ant-layout-sider {
     background: #323435;
+  }
+
+  & .left-layout{
+    overflow: hidden;
+
+    & .left-layout_content{
+      overflow: auto;
+      margin: 0;
+      height: 100vh;
+
+      & .inner-content {
+        padding: pxToRem(33) pxToRem(24) pxToRem(24) pxToRem(42);
+        background: $Neutral-1;
+        height: auto;
+      }
+    }
   }
 }

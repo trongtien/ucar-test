@@ -2,24 +2,12 @@
   <a href="/" target="_parent">
     <img src="/assets/images/logo.svg" alt="logo" />
   </a>
-  
-  <app-toggle-layout></app-toggle-layout>
-  <span
-    class="header-trigger icon-colapse-side-bar"
-    (click)="isCollapsed = !isCollapsed"
-  >
-    <span
-      class="trigger"
-      nz-icon
-      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-    ></span>
-  </span>
-</div>
 
+  <app-toggle-layout></app-toggle-layout>
+</div>
 <ul
   nz-menu
   nzMode="inline"
-  [nzInlineCollapsed]="isCollapsed"
   class="sidebar-list-menu_bg sidebar-list-menu"
 >
   <li

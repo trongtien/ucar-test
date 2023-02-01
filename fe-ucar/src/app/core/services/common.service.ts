@@ -8,7 +8,9 @@ import { filter, map, mergeMap, tap } from "rxjs";
 })
 export class CommonService {
 
-    private titleBase = 'Ucar Dev Test'
+    public tootleLayout: boolean = true
+
+    private titleBase: string = 'Ucar Dev Test'
 
     constructor(
         private router: Router,
@@ -17,7 +19,7 @@ export class CommonService {
         private titleService: Title
     ) { }
 
-    setTitle(newTitle: string | undefined) {
+    public setTitle(newTitle: string | undefined) {
         if(newTitle){
             this.titleService.setTitle(`${this.titleBase} |  ${newTitle}`)
         }
@@ -26,17 +28,21 @@ export class CommonService {
         }
     }
 
-    getTitle() {
+    public setToggle(){
+        this.tootleLayout = !this.tootleLayout
+    }
+
+    public getTitle() {
         return this.titleService.getTitle()
     }
 
-    updateDescription(description: string) {
+    public updateDescription(description: string) {
         if (description) {
             this.meta.updateTag({ name: 'description', content: description });
         }
     }
 
-    dynamicPage() {
+    public dynamicPage() {
         this.router.events
             .pipe(
                 filter((event) => event instanceof NavigationEnd),

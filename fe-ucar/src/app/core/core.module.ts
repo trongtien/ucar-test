@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
 import { NgZorroModule } from './ng-zorro/ng-zorro.module';
 import { NgZorroIconModule } from './ng-zorro-icon/ng-zorro-icon.module';
 
@@ -20,7 +20,8 @@ import { ToggleLayoutComponent } from './components/toggle-layout/toggle-layout.
   imports: [
     NgZorroModule,
     NgZorroIconModule,
-    RouterModule
+    RouterModule,
+    CommonModule
   ],
   exports: [
     NgZorroModule,

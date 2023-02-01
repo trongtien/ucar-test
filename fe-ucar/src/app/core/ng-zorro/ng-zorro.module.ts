@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 @NgModule({
-  declarations: [],
   exports: [
     NzLayoutModule,
-    NzMenuModule
+    NzMenuModule,
+    NzDropDownModule,
+    NzAvatarModule
   ]
 })
 export class NgZorroModule { }

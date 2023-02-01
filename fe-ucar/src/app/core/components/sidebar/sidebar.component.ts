@@ -1,13 +1,20 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { ResizeService } from '@app/core/services';
+import { Component, OnInit } from '@angular/core';
+import { LayoutService } from '@app/core/services';
 
 @Component({
   selector: 'app-component-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent {
-  isCollapsed = false
-
+export class SidebarComponent implements OnInit{
   
+  public isCollapse: boolean = false
+
+  constructor(
+    private _layoutService: LayoutService
+  ){}
+
+  ngOnInit(): void {
+    this._layoutService.isToggleLayout$.subscribe(e => this.isCollapse = e)
+  }
 }

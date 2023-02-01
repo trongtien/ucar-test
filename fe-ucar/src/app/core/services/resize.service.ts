@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
-import { Observable, Subscription, fromEvent } from "rxjs";
+import { BehaviorSubject, Observable, Subscription, fromEvent } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -14,10 +14,12 @@ export class ResizeService {
     private isDesktopDevice: boolean = false
     private screenWidth = 0
     private screenHeight = 0
-    public isViewResponsive = false
+
+    private _isViewResponsiveSubject$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
+    public isViewResponsive$: Observable<boolean> = this._isViewResponsiveSubject$.asObservable()
 
     constructor(
-        private deviceService: DeviceDetectorService,
+        private _deviceService: DeviceDetectorService,
     ) { }
 
     setScreenWidth(size: number) {
@@ -42,20 +44,20 @@ export class ResizeService {
             this.screenWidth = width
 
             if (width <= 992){
-                this.isViewResponsive = true
+                this._isViewResponsiveSubject$.next(true)
             }else{
-                this.isViewResponsive = false
+                this._isViewResponsiveSubject$.next(false)
             }
         });
     }
 
     epicFunction() {
-        const deviceInfo: DeviceInfo | null = this.deviceService.getDeviceInfo() || null
+        const deviceInfo: DeviceInfo | null = this._deviceService.getDeviceInfo() || null
 
         if (deviceInfo !== null) {
-            this.isMobile = this.deviceService.isMobile()
-            this.isTablet = this.deviceService.isTablet()
-            this.isDesktopDevice = this.deviceService.isDesktop()
+            this.isMobile = this._deviceService.isMobile()
+            this.isTablet = this._deviceService.isTablet()
+            this.isDesktopDevice = this._deviceService.isDesktop()
         }
     }
 }

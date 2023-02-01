@@ -1,21 +1,10 @@
-<ng-template #isViewIcon>
-    <span
-      class="header-trigger icon-colapse-side-bar"
-    >
-      <span class="trigger" nz-icon></span>
-    </span>
-  </ng-template>
-  
-
-<!-- <ng-template #isViewIcon>
+<div
+  class="header-trigger icon-collapse-side-bar"
+  (click)="changeToggleLayout()"
+>
   <span
-    class="header-trigger icon-colapse-side-bar"
-    (click)="isCollapsed = !isCollapsed"
-  >
-    <span
-      class="trigger"
-      nz-icon
-      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-    ></span>
-  </span>
-</ng-template> -->
+    class="trigger"
+    nz-icon
+    [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+  ></span>
+</div>
