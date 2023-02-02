@@ -1,7 +1,5 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { NgZorroModule } from './ng-zorro/ng-zorro.module';
 import { NgZorroIconModule } from './ng-zorro-icon/ng-zorro-icon.module';
@@ -10,6 +8,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ToggleLayoutComponent } from './components/toggle-layout/toggle-layout.component';
+import { CommonService, LayoutService, ResizeService } from './services';
 
 @NgModule({
   declarations: [
@@ -21,16 +20,26 @@ import { ToggleLayoutComponent } from './components/toggle-layout/toggle-layout.
   imports: [
     NgZorroModule,
     NgZorroIconModule,
-    RouterModule,
-    CommonModule,
-    FormsModule
+    RouterModule
   ],
   exports: [
     NgZorroModule,
     NgZorroIconModule,
-    RouterModule,
-    CommonModule,
-    FormsModule
+    RouterModule
+  ],
+  schemas:[
+    NO_ERRORS_SCHEMA
   ]
 })
-export class CoreModule { }
+export class CoreModule { 
+  static forRoot(): ModuleWithProviders<any> {
+    return {
+      ngModule: CoreModule,
+      providers: [
+        CommonService,
+        LayoutService,
+        ResizeService
+      ]
+    };
+  }
+}

@@ -1,0 +1,24 @@
+@import "src/assets/styles";
+
+.modal-create-card-brand-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+    & .modal-create-card-brand-header_title{
+        margin-bottom: pxToRem(4);
+        font-weight: 600;
+        font-size: pxToRem(16);
+        font-family: $secondary-font;
+        color: $primary-text;
+    }
+
+    & .modal-create-card-brand-header_description{
+        margin-bottom: 0;
+        font-weight: 400;
+        font-size: pxToRem(14);
+        font-family: $secondary-font;
+        color: $Neutral-7;
+    }
+}

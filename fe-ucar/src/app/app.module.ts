@@ -10,7 +10,7 @@ import en from '@angular/common/locales/en';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 registerLocaleData(en);
@@ -20,13 +20,14 @@ registerLocaleData(en);
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
     CommonModule,
-    HttpClientModule,
+    BrowserModule,
     BrowserAnimationsModule,
-    CoreModule,
-    AppRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    CoreModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
