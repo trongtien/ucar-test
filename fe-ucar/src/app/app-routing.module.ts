@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './core/components/layout/layout.component';
-import { RouterPrivate } from './core/routes/router-private';
+import { RouterPrivate } from './core/routes/router-private.routes';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
     anchorScrolling: 'enabled',
     scrollPositionRestoration: 'enabled',
     onSameUrlNavigation: "reload"
-  })],
+  })]
   ],
   exports: [RouterModule]
 })

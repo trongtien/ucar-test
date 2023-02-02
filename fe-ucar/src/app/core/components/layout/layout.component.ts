@@ -18,7 +18,7 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this._layoutService.isToggleLayout$.subscribe(e => this.isCollapsed = e)
-    this._resideService.isViewResponsive$.subscribe(e => this.isResize = e)
+    this._resideService.isViewResponsive$.subscribe((e: boolean) => this.isResize = e)
   }
   
 }

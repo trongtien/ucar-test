@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { NgZorroModule } from './ng-zorro/ng-zorro.module';
 import { NgZorroIconModule } from './ng-zorro-icon/ng-zorro-icon.module';
 
@@ -8,7 +10,6 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ToggleLayoutComponent } from './components/toggle-layout/toggle-layout.component';
-
 
 @NgModule({
   declarations: [
@@ -21,11 +22,15 @@ import { ToggleLayoutComponent } from './components/toggle-layout/toggle-layout.
     NgZorroModule,
     NgZorroIconModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     NgZorroModule,
-    NgZorroIconModule
+    NgZorroIconModule,
+    RouterModule,
+    CommonModule,
+    FormsModule
   ]
 })
 export class CoreModule { }

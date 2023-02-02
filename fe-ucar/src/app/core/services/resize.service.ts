@@ -6,6 +6,7 @@ import { BehaviorSubject, Observable, Subscription, fromEvent } from "rxjs";
     providedIn: 'root'
 })
 export class ResizeService {
+   
     private resizeObservable$: Observable<Event> | undefined;
     private resizeSubscription$: Subscription | undefined;
 
@@ -36,7 +37,7 @@ export class ResizeService {
 
     detectSize() {
         this.resizeObservable$ = fromEvent(window, 'resize');
-        this.resizeSubscription$ = this.resizeObservable$.subscribe(e => {
+        this.resizeSubscription$ = this.resizeObservable$.subscribe((e: any) => {
             let width = window.innerWidth
             let height = window.innerHeight
 
