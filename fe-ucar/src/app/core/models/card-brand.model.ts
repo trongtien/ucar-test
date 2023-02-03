@@ -1,4 +1,5 @@
 export interface ITableCardBrandItem {
+    id: number;
     avatar: string;
     name: string;
     description: string;

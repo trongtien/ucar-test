@@ -1,6 +1,6 @@
 
 
-export const formatRouterLink = (pathContant: string): string => {
-    const defualtPathLink = `/${pathContant}`
-    return defualtPathLink
+export const formatRouterLink = (pathContact: string): string => {
+    const defaultPathLink = `/${pathContact}`
+    return defaultPathLink
 }

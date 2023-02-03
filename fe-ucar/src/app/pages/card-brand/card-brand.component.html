@@ -26,7 +26,12 @@
   </div>
 
   <div class="card-brand-header_right">
-    <button nz-button nzType="primary" class="card-brand-header_right-button">
+    <button
+      nz-button
+      nzType="primary"
+      class="card-brand-header_right-button"
+      (click)="setIsModalCreateBrand()"
+    >
       <span nz-icon nzType="plus" nzTheme="outline"></span>
       Add Brand
     </button>
@@ -103,7 +108,7 @@
           </td>
 
           <td [width]="'8%'">
-            <button class="table-body-action-view" nz-button nzType="default">
+            <button class="table-body-action-view" nz-button nzType="default" (click)="onDetail(item.id)">
               View Details
             </button>
           </td>
@@ -113,4 +118,7 @@
   </nz-table>
 </div>
 
-<app-modal-add-card-brand></app-modal-add-card-brand>
+<app-modal-cu-card-brand
+  [isVisible]="isModalCreateBrand"
+  (closeModal)="setIsModalCreateBrand()"
+></app-modal-cu-card-brand>

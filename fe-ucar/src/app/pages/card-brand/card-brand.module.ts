@@ -3,20 +3,25 @@ import { CoreModule } from '@app/core/core.module';
 import { CardBrandComponent } from './card-brand.component';
 import { CommonModule } from '@angular/common';
 import { CardBrandRoutingModule } from './card-brand-routing.module';
-import { ModalAddCardBrandComponent } from './modal-add-card-brand/modal-add-card-brand.component';
-
+import { ModalCuCardBrandComponent } from './modal-cu-card-brand/modal-cu-card-brand.component';
+import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DetailComponent } from './detail/detail.component';
 @NgModule({
     imports: [
         CommonModule,
         CoreModule,
-        CardBrandRoutingModule
+        CardBrandRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     exports: [
         CardBrandComponent
     ],
     declarations: [
         CardBrandComponent,
-        ModalAddCardBrandComponent
+        ModalCuCardBrandComponent,
+        DetailComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

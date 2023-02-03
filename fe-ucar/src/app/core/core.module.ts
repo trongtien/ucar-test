@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ToggleLayoutComponent } from './components/toggle-layout/toggle-layout.component';
 import { CommonService, LayoutService, ResizeService } from './services';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,14 @@ import { CommonService, LayoutService, ResizeService } from './services';
   imports: [
     NgZorroModule,
     NgZorroIconModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   exports: [
     NgZorroModule,
     NgZorroIconModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   schemas:[
     NO_ERRORS_SCHEMA
